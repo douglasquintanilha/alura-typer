@@ -1,0 +1,40 @@
+.campo-texto{
+    height: 250px;
+    border: 3px solid black;
+
+    margin: 0 auto;
+    padding: 10px;
+    text-align: left;
+    white-space: pre-wrap;
+}
+
+body{
+
+}
+.texto{
+    width: 900px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.jogo-concluido{
+    background-color: lightgray;
+    transition: 1s ease-in;
+}
+
+.score{
+    width: 100px;
+    margin: 0 auto;
+    list-style: none;
+}
+
+.container{
+    width: 100%;
+}
+
+.cronometro{
+    display: inline-block;
+    margin-top: 5px;
+    margin-left: 5px;
+    vertical-align: top;
+}

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Al asduraTyper</title>
+    <!-- Import Google Material Icons -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+
+    <!--Import materialize.css-->
+    <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
+    <link rel="stylesheet" href="css/main.css">
+
+    <!--Let browser know website is optimized for mobile-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>''
+</head>
+<body>
+    <div class="container">
+        <h1 class="center header">AluraTyper</h1>
+
+        <div class="row">
+            <p class="texto center col s10 offset-s1">Lorem ipsum dolor sit amet, consectetur adipisicing elit. In odio quibusdam sed repellendus. Iusto ipsam fuga hic molestiae, ab ipsa perspiciatis inventore accusamus illum explicabo placeat aliquam, vitae eveniet dolor.</p>
+        </div>
+
+        <div class="row">
+            <div class="col s4 offset-s4 center">
+               <i class="small material-icons">query_builder</i>
+               <p class="cronometro"><span id="tempo">3</span> segundos.</p>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="campo-texto col s10 offset-s1" contenteditable="true" ></div>
+            <div class="col s1">
+                <a class="btn-floating btn-large waves-effect waves-light red"><i id="reiniciar" class="material-icons">replay</i></a>
+            </div>
+        </div>
+        <div class="center">
+            <span id="contador-caracteres">0</span> caracteres.
+            <span id="contador-palavras">0</span> palavras.
+        </div>
+
+
+        <div class="center">
+            <h1>Score</h1>
+            <ul class="score">
+
+            </ul>
+        </div>
+
+    </div>
+
+    <!-- Importando javascript -->
+    <script src="js/jquery.js" charset="utf-8"></script>
+    <script type="text/javascript" src="js/materialize.min.js"></script>
+    <script src="js/main.js" charset="utf-8"></script>
+</body>
+</html>
