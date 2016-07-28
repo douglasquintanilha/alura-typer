@@ -1,6 +1,7 @@
 var campo = $(".campo-texto");
 var tempoInicialSegundos = $("#tempo").text();
 var tempoInicialMinutos = tempoInicialSegundos/60;
+var botaoTrocaFrase = $("#troca-frase");
 
 $(document).ready(function(){
     inicializaContadores();
@@ -9,7 +10,9 @@ $(document).ready(function(){
 });
 
 
+
 $("#reiniciar").on("click",reiniciaJogo);
+botaoTrocaFrase.click(fraseAleatoria);
 
 function reiniciaJogo(){
     $("#tempo").text(tempoInicialSegundos);
@@ -27,8 +30,7 @@ function inicializaMarcador(){
     campo.on("input",function(){
         var digitadas = $(".campo-texto").html();
         var palavras = $(".texto").html().substr(0, digitadas.length);
-        console.log("Digitadas:" + digitadas + "|length" + digitadas.length );
-        console.log("Palavras: "+ palavras + "|lenght" + palavras.length);
+
         if(digitadas == palavras){
             $(this).css({
                 "border": "3px solid green"
@@ -78,4 +80,23 @@ function finalizaJogo(){
     var palavrasPorMinuto = (palavrasEscritas/tempoInicialMinutos).toFixed(2);
 
     $(".score").append("<li>"+ palavrasPorMinuto +" ppm</li> ");
+}
+
+
+
+function fraseAleatoria(){
+    $(".spinner").toggle("spinner");
+    $.get({
+        url: "http://localhost:3000/frases",
+        success: trocaFrase
+    }).done(function(){
+        $(".spinner").toggle("spinner");
+    });
+}
+
+function trocaFrase(dados){
+    var frase = $(".texto");
+    var aleatorio = Math.floor(Math.random() * dados.length );
+    var novaFrase = dados[aleatorio].texto;
+    frase.text(novaFrase);
 }

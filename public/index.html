@@ -19,20 +19,32 @@
         <h1 class="center header">AluraTyper</h1>
 
         <div class="row">
-            <p class="texto center col s10 offset-s1">Lorem ipsum dolor sit amet, consectetur adipisicing elit. In odio quibusdam sed repellendus. Iusto ipsam fuga hic molestiae, ab ipsa perspiciatis inventore accusamus illum explicabo placeat aliquam, vitae eveniet dolor.</p>
+            <p class="borda texto center col s10 offset-s1">Lorem ipsum dolor sit amet, consectetur adipisicing elit. In odio quibusdam sed repellendus. Iusto ipsam fuga hic molestiae, ab ipsa perspiciatis inventore accusamus illum explicabo placeat aliquam, vitae eveniet dolor.</p>
+            <div class="col s1 center">
+                <a class="btn-floating btn-large waves-effect waves-light blue"  id="troca-frase"><i class="material-icons">shuffle</i></a>
+            </div>
+         </div>
+
+        <div class="row">
+            <div class="col s12 center">
+                <img src="imagens/spinner.gif" class="spinner" alt="Imagem de carramento">
+            </div>
         </div>
 
         <div class="row">
             <div class="col s4 offset-s4 center">
                <i class="small material-icons">query_builder</i>
-               <p class="cronometro"><span id="tempo">3</span> segundos.</p>
-            </div>
+               <p class="cronometro"><span id="tempo">30</span> segundos.</p>
+           </div>
+           <div class="col s1 offset-s3 center">
+               <a class="btn-floating btn-large waves-effect waves-light red"><i id="reiniciar" class="material-icons">restore</i></a>
+           </div>
         </div>
 
         <div class="row">
             <div class="campo-texto col s10 offset-s1" contenteditable="true" ></div>
-            <div class="col s1">
-                <a class="btn-floating btn-large waves-effect waves-light red"><i id="reiniciar" class="material-icons">replay</i></a>
+            <div class="col s1 center">
+                <a class="btn-floating btn-large waves-effect waves-light green"><i id="reiniciar" class="material-icons">assignment</i></a>
             </div>
         </div>
         <div class="center">
@@ -40,19 +52,22 @@
             <span id="contador-palavras">0</span> palavras.
         </div>
 
-
         <div class="center">
             <h1>Score</h1>
-            <ul class="score">
-
-            </ul>
+            <ol class="score">
+                <li>50ppm</li>
+                <li>60ppm</li>
+                <li>70ppm</li>
+                <li>80ppm</li>
+                <li>90ppm</li>
+            </ol>
         </div>
 
     </div>
 
     <!-- Importando javascript -->
-    <script src="js/jquery.js" charset="utf-8"></script>
-    <script type="text/javascript" src="js/materialize.min.js"></script>
-    <script src="js/main.js" charset="utf-8"></script>
+    <script src="js/jquery.js"></script>
+    <script src="js/materialize.min.js"></script>
+    <script src="js/main.js"></script>
 </body>
 </html>

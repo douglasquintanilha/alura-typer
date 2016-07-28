@@ -8,9 +8,6 @@
     white-space: pre-wrap;
 }
 
-body{
-
-}
 .texto{
     width: 900px;
     margin: 0 auto;
@@ -37,4 +34,12 @@ body{
     margin-top: 5px;
     margin-left: 5px;
     vertical-align: top;
+}
+
+.spinner{
+    display: none;
+}
+
+.mostra-spinner{
+    opacity: 1;
 }
