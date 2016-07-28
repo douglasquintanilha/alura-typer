@@ -20,7 +20,7 @@
 }
 
 .score{
-    width: 100px;
+    width: 200px;
     margin: 0 auto;
     list-style: none;
 }
@@ -42,4 +42,33 @@
 
 .mostra-spinner{
     opacity: 1;
+}
+
+.contador{
+    font-size: 18px;
+    display: inline;
+}
+footer{
+    background-color: #e0e0e0;
+    width: 100%;
+    height: 100%;
+    margin-top: 30px;
+}
+
+footer .row{
+    height: 40px;
+}
+#logo-alura{
+    width: 80px;
+    margin-top: 5px;
+    margin-left: 0px;
+}
+
+.erro{
+    color: red;
+    display: none;
+}
+
+[contentEditable=true]:empty:not(:focus):before{
+    content:attr(data-placeholder);
 }

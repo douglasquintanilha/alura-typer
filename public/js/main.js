@@ -2,6 +2,8 @@ var campo = $(".campo-texto");
 var tempoInicialSegundos = $("#tempo").text();
 var tempoInicialMinutos = tempoInicialSegundos/60;
 var botaoTrocaFrase = $("#troca-frase");
+var botaoScore = $("#botao-score");
+var jogoValido = false;
 
 $(document).ready(function(){
     inicializaContadores();
@@ -35,10 +37,12 @@ function inicializaMarcador(){
             $(this).css({
                 "border": "3px solid green"
             });
+            jogoValido = true;
         }else{
             $(this).css({
                 "border": "3px solid red"
             });
+            jogoValido = false;
         }
     });
 }
@@ -78,8 +82,19 @@ function finalizaJogo(){
     campo.addClass("jogo-concluido");
     var palavrasEscritas = parseInt($("#contador-palavras").text());
     var palavrasPorMinuto = (palavrasEscritas/tempoInicialMinutos).toFixed(2);
+    scrollScore();
+    var resultado = validaJogo(palavrasPorMinuto);
+    $(".score").append(resultado);
+}
 
-    $(".score").append("<li>"+ palavrasPorMinuto +" ppm</li> ");
+function validaJogo(palavrasPorMinuto){
+    var resultado = "<li>"+ palavrasPorMinuto +"ppm";
+    if(jogoValido == true){
+        resultado += "<i class='material-icons green-text'>spellcheck</i></li>";
+    }else{
+        resultado += "<i class='material-icons red-text'>error_outline</i></li>";
+    }
+    return resultado;
 }
 
 
@@ -91,6 +106,12 @@ function fraseAleatoria(){
         success: trocaFrase
     }).done(function(){
         $(".spinner").toggle("spinner");
+    }).fail(function(){
+        $(".erro").slideDown();
+        setTimeout(function(){
+            $(".spinner").toggle("spinner");
+            $(".erro").hide();
+        },1000);
     });
 }
 
@@ -99,4 +120,10 @@ function trocaFrase(dados){
     var aleatorio = Math.floor(Math.random() * dados.length );
     var novaFrase = dados[aleatorio].texto;
     frase.text(novaFrase);
+}
+
+botaoScore.click(scrollScore);
+function scrollScore(){
+    var score = $(".score").offset().top;
+    $('body').animate({scrollTop:score},1000);
 }

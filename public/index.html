@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <title>AluraTyper</title>
     <!-- Import Google Material Icons -->
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="css/google-fonts.css" rel="stylesheet">
 
 
     <!--Import materialize.css-->
@@ -27,6 +27,7 @@
 
         <div class="row">
             <div class="col s12 center">
+                <p class="erro">Ocorreu um erro :( . Por favor tente novamente.</p>
                 <img src="imagens/spinner.gif" class="spinner" alt="Imagem de carramento">
             </div>
         </div>
@@ -34,7 +35,7 @@
         <div class="row">
             <div class="col s4 offset-s4 center">
                <i class="small material-icons">query_builder</i>
-               <p class="cronometro"><span id="tempo">30</span> segundos.</p>
+               <p class="cronometro"><span id="tempo">20</span> segundos.</p>
            </div>
            <div class="col s1 offset-s3 center">
                <a class="btn-floating btn-large waves-effect waves-light red"><i id="reiniciar" class="material-icons">restore</i></a>
@@ -42,29 +43,35 @@
         </div>
 
         <div class="row">
-            <div class="campo-texto col s10 offset-s1" contenteditable="true" ></div>
+            <div class="campo-texto col s10 offset-s1" contenteditable="true" data-placeholder="Para começar clique aqui!" ></div>
             <div class="col s1 center">
-                <a class="btn-floating btn-large waves-effect waves-light green"><i id="reiniciar" class="material-icons">assignment</i></a>
+                <a class="btn-floating btn-large waves-effect waves-light green" id="botao-score"><i id="reiniciar" class="material-icons">assignment</i></a>
             </div>
         </div>
         <div class="center">
-            <span id="contador-caracteres">0</span> caracteres.
-            <span id="contador-palavras">0</span> palavras.
+            <p class="contador"><span id="contador-caracteres">0</span> caracteres.</p>
+            <p class="contador"><span id="contador-palavras">0</span> palavras.</p>
         </div>
 
         <div class="center">
             <h1>Score</h1>
             <ol class="score">
-                <li>50ppm</li>
-                <li>60ppm</li>
-                <li>70ppm</li>
-                <li>80ppm</li>
-                <li>90ppm</li>
+                <li>50.0ppm<i class='material-icons green-text'>spellcheck</i></li>
+                <li>60.0ppm<i class='material-icons green-text'>spellcheck</i></li>
+                <li>70.0ppm<i class='material-icons red-text'>error_outline</i></li>
+                <li>80.0ppm<i class='material-icons green-text'>spellcheck</i></li>
             </ol>
         </div>
 
     </div>
 
+    <footer>
+        <div class="row">
+            <div class="col s1 offset-s1">
+                <a href="https://www.alura.com.br" target="_noblank"><img src="imagens/alura.png" alt="Logo Alura" id="logo-alura"></a>
+            </div>
+        </div>
+    </footer>
     <!-- Importando javascript -->
     <script src="js/jquery.js"></script>
     <script src="js/materialize.min.js"></script>
